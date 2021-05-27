@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="665.0" maxWidth="1006.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="1006.0" scaleShape="false" style="-fx-background-color: #1E1E1E;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton fx:id="bLoad" buttonType="RAISED" layoutX="23.0" layoutY="21.0" onAction="#load" prefHeight="25.0" prefWidth="141.0" ripplerFill="#1fafbc" text="Load Graphs" textFill="#d3d1d1" visible="false">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></JFXButton>
+      <StackPane layoutX="356.0" layoutY="15.0" prefHeight="633.0" prefWidth="633.0" style="-fx-background-color: #2D2D2D;">
+         <children>
+            <Group fx:id="gLdraw" />
+            <Group fx:id="gCdraw" />
+         </children>
+      </StackPane>
+      <JFXButton fx:id="bStop" buttonType="RAISED" layoutX="103.0" layoutY="611.0" onAction="#stop" prefHeight="25.0" prefWidth="55.0" ripplerFill="#a81c1a" text="Stop" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="bPlay" buttonType="RAISED" layoutX="23.0" layoutY="611.0" onAction="#play" prefHeight="25.0" prefWidth="55.0" ripplerFill="#0ea816" text="Play" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lCities" layoutX="25.0" layoutY="60.0" text="Number of Cities : " textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="279.0" text="Parameters :" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="321.0" text="Temperature :" textFill="#d3d1d1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="354.0" text="Cooling rate :" textFill="#d3d1d1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="386.0" text="L :" textFill="#d3d1d1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfIniTemp" focusColor="#ffde03" layoutX="147.0" layoutY="319.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-inner-color: #d3d1d1;" />
+      <JFXTextField fx:id="tfCR" focusColor="#ffde03" layoutX="147.0" layoutY="352.0" prefHeight="25.0" prefWidth="75.0" style="-fx-text-inner-color: #d3d1d1;" />
+      <JFXTextField fx:id="tfL" focusColor="#ffde03" layoutX="79.0" layoutY="383.0" prefHeight="25.0" prefWidth="42.0" style="-fx-text-inner-color: #d3d1d1;" />
+      <Label fx:id="lIT" layoutX="60.0" layoutY="483.0" text="Initial Tour :" textFill="#d3d1d1">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lCT" layoutX="60.0" layoutY="509.0" text="Final Tour :" textFill="#d3d1d1">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="444.0" text="Distances :" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="569.0" prefHeight="26.0" prefWidth="100.0" text="Temperature" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <ProgressBar fx:id="pbTemp" layoutX="182.0" layoutY="573.0" prefHeight="18.0" prefWidth="141.0" progress="0.52" stylesheets="@res/PB.css" />
+      <Label fx:id="lElapsedTime" alignment="CENTER" contentDisplay="CENTER" layoutX="182.0" layoutY="612.0" prefHeight="22.0" prefWidth="141.0" text="0s" textAlignment="CENTER" textFill="#ffde03" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+         <font>
+            <Font name="Arial Narrow" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lTP" layoutX="125.0" layoutY="574.0" prefHeight="17.0" prefWidth="42.0" text="100%" textFill="#d3d1d1" />
+      <Label layoutX="27.0" layoutY="102.0" text="Seed :" textFill="#d3d1d1" visible="false">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="tfSeed" focusColor="#ffde03" layoutX="84.0" layoutY="103.0" prefHeight="25.0" prefWidth="153.0" style="-fx-text-inner-color: #d3d1d1;" visible="false" />
+      <JFXButton fx:id="bFSeed" buttonType="RAISED" contentDisplay="CENTER" layoutX="32.0" layoutY="137.0" onAction="#findBestSeed" prefHeight="25.0" prefWidth="93.0" ripplerFill="#0ea816" text="Find Best in :" textAlignment="CENTER" textFill="#d3d1d1" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="tfNT" focusColor="#ffde03" layoutX="130.0" layoutY="137.0" prefHeight="25.0" prefWidth="42.0" promptText="10" style="-fx-text-inner-color: #d3d1d1;" visible="false" />
+      <Label layoutX="228.0" layoutY="319.0" prefHeight="25.0" prefWidth="14.0" text="°c" textFill="#d3d1d1" />
+      <Label layoutX="182.0" layoutY="139.0" prefHeight="25.0" prefWidth="42.0" text="Threads" textFill="#d3d1d1" visible="false" />
+      <Label layoutX="128.0" layoutY="383.0" prefHeight="25.0" prefWidth="55.0" text="Iterations" textFill="#d3d1d1" />
+      <ChoiceBox fx:id="chbGraphs" layoutX="180.0" layoutY="53.0" prefHeight="29.0" prefWidth="68.0" stylesheets="@res/ChoiceBox.css" />
+      <Separator layoutX="82.0" layoutY="182.0" prefWidth="200.0" />
+      <Separator layoutX="82.0" layoutY="434.0" prefWidth="200.0" />
+      <Separator layoutX="82.0" layoutY="554.0" prefWidth="200.0" />
+      <Separator layoutX="82.0" layoutY="270.0" prefWidth="200.0" />
+      <Label layoutX="27.0" layoutY="194.0" prefHeight="26.0" prefWidth="133.0" text="Swap Method :" textFill="#d3d1d1">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <JFXRadioButton fx:id="rS" layoutX="161.0" layoutY="199.0" selected="true" style="-jfx-selected-color: #FFDE03;" text="Reverse Random SubList" textFill="#d3d1d1">
+         <toggleGroup>
+            <ToggleGroup fx:id="swapMG" />
+         </toggleGroup>
+      </JFXRadioButton>
+      <JFXRadioButton fx:id="aS" layoutX="161.0" layoutY="220.0" style="-jfx-selected-color: #FFDE03;" text="Random Swap" textFill="#d3d1d1" toggleGroup="$swapMG" />
+      <JFXRadioButton fx:id="rRSL" layoutX="161.0" layoutY="242.0" style="-jfx-selected-color: #FFDE03;" text="Adjacent Swap" textFill="#d3d1d1" toggleGroup="$swapMG" />
+      <JFXButton fx:id="bRefresh" buttonType="RAISED" layoutX="248.0" layoutY="101.0" onAction="#refreshSeed" prefHeight="25.0" prefWidth="68.0" ripplerFill="#1fafbc" text="Refresh" textFill="#d3d1d1" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXSpinner fx:id="psFS" layoutX="236.0" layoutY="141.0" prefHeight="22.0" prefWidth="33.0" visible="false" />
+   </children>
+</AnchorPane>

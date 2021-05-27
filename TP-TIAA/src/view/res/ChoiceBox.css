@@ -1,0 +1,27 @@
+.choice-box {
+    -fx-font: 16px System;
+    -fx-prompt-text-fill: #4d4d4d;
+    -fx-text-fill: #d3d1d1;
+    -fx-background-color: none;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #4d4d4d;
+    -fx-padding: 0 0 3 -8;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: #FFDE03;
+}
+.choice-box:focused {
+    -fx-font: 12px System;
+    -fx-prompt-text-fill: #4d4d4d;
+    -fx-text-fill: #d3d1d1;
+    -fx-background-color: none;
+    -fx-border-width: 0 0 2 0;
+    -fx-border-color: #FFDE03;
+    -fx-padding: 0 0 3 -8;
+}
+.choice-box .list-cell:filled:selected .text {
+    -fx-fill: #d3d1d1;
+}
+.choice-box .arrow {
+    -fx-background-color: #FFDE03;
+}
